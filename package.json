@@ -1,0 +1,36 @@
+{
+  "name": "structure-node-typescript",
+  "version": "1.0.0",
+  "main": "index.js",
+  "keywords": [
+    "nodejs",
+    "typescript",
+    "ts-node",
+    "swc",
+    "express"
+  ],
+  "author": "ccrs",
+  "description": "template for nodejs with typescript",
+  "type": "module",
+  "scripts": {
+    "dev:server": "node --no-warnings=ExperimentalWarning --loader ts-node/esm src/index.ts",
+    "test": "vitest run",
+    "test:watch": "vitest --watch",
+    "test:cov": "vitest run --coverage"
+  },
+  "devDependencies": {
+    "@faker-js/faker": "^9.0.0",
+    "@swc/core": "^1.7.18",
+    "@swc/helpers": "^0.5.12",
+    "@types/node": "^22.5.4",
+    "ts-node": "^10.9.2",
+    "tsx": "^4.19.0",
+    "typescript": "^5.5.4",
+    "vite-tsconfig-paths": "^5.0.1",
+    "vitest": "^2.0.5"
+  },
+  "dependencies": {
+    "@types/bcrypt": "^5.0.2",
+    "bcrypt": "^5.1.1"
+  }
+}

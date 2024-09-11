@@ -3,7 +3,6 @@ import bcrypt from "bcrypt";
 export class User extends Entity {
     password;
     email;
-    individualTaxNumber;
     companies;
     role;
     permissions;
@@ -14,7 +13,6 @@ export class User extends Entity {
         super(id);
         this.password = bcrypt.hashSync(password, 10);
         this.email = email;
-        this.individualTaxNumber = individualTaxNumber;
         this.role = role;
         this.permissions =
             role === "admin"

@@ -29,6 +29,7 @@ export class Company extends Entity {
     this.phones = phones;
     this.stateRegistration = stateRegistration;
     this.employerIdentificationNumber = employerIdentificationNumber;
+    this.address = address;
     this.createdAt = new Date();
   }
 

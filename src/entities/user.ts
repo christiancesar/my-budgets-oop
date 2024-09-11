@@ -11,20 +11,18 @@ export type Permissions = {
 };
 
 export class User extends Entity {
-  password: string;
-  email: string;
-  individualTaxNumber: string;
-  companies: Company[];
-  role: "admin" | "user";
-  permissions: Permissions;
-  profile?: Profile;
-  createdAt: Date;
-  updatedAt?: Date | null;
+  private password: string;
+  private email: string;
+  private companies: Company[];
+  private role: "admin" | "user";
+  private permissions: Permissions;
+  private profile?: Profile;
+  private createdAt: Date;
+  private updatedAt?: Date | null;
 
   constructor(
     password: string,
     email: string,
-    phone: string,
     individualTaxNumber: string,
     companies: Company[],
     role: "admin" | "user",
@@ -33,7 +31,6 @@ export class User extends Entity {
     super(id);
     this.password = bcrypt.hashSync(password, 10);
     this.email = email;
-    this.individualTaxNumber = individualTaxNumber;
     this.role = role;
     this.permissions =
       role === "admin"
@@ -70,5 +67,10 @@ export class User extends Entity {
     } else {
       console.error("Current password is incorrect");
     }
+  }
+
+  updateProfile(profile: Profile) {
+    this.profile = profile;
+    this.updatedAt = new Date();
   }
 }
